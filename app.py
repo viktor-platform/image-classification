@@ -50,10 +50,16 @@ CLASSES = [
     "truck",
 ]
 
+
+_option_1 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_2_epochs.h5'
+_option_2 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_5_epochs.h5'
+_option_3 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_10_epochs.h5'
+
+
 MODEL_OPTIONS = [
-    OptionListElement(label="CNN (2 epochs)", value="./cnn_model/cnn_cifar10_model_2_epochs.h5"),
-    OptionListElement(label="CNN (5 epochs)", value="./cnn_model/cnn_cifar10_model_5_epochs.h5"),
-    OptionListElement(label="CNN (10 epochs)", value="./cnn_model/cnn_cifar10_model_10_epochs.h5"),
+    OptionListElement(label="CNN (2 epochs)", value=str(_option_1)),
+    OptionListElement(label="CNN (5 epochs)", value=str(_option_2)),
+    OptionListElement(label="CNN (10 epochs)", value=str(_option_3)),
 ]
 
 
