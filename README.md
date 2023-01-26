@@ -7,6 +7,8 @@ tutorial will not focus on the training of the model, we will briefly mention th
 on the CIFAR-10 dataset, an image dataset containing 10 classes of various objects such as airplanes, cars, 
 and birds. Using TensorFlow, an open-source machine learning library, to build and train the model.
 
+![Preview of app](./resources/cover_image.png)
+
 By the end of this tutorial, you will have a working image classification model deployed within a VIKTOR app, 
 and be able to use the model to classify images in real-time. This tutorial is perfect for engineers and developers 
 who want to use pre-trained models to add image classification functionality to their projects.
