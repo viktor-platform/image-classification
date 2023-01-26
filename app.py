@@ -51,20 +51,16 @@ CLASSES = [
 ]
 
 
-_option_1 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_2_epochs.h5'
-_option_2 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_5_epochs.h5'
-_option_3 = Path(__file__).parent / 'cnn_model' / 'cnn_cifar10_model_10_epochs.h5'
-
-
 MODEL_OPTIONS = [
-    OptionListElement(label="CNN (2 epochs)", value=str(_option_1)),
-    OptionListElement(label="CNN (5 epochs)", value=str(_option_2)),
-    OptionListElement(label="CNN (10 epochs)", value=str(_option_3)),
+    OptionListElement(label="CNN (2 epochs)", value='cnn_cifar10_model_2_epochs.h5'),
+    OptionListElement(label="CNN (5 epochs)", value='cnn_cifar10_model_5_epochs.h5'),
+    OptionListElement(label="CNN (10 epochs)", value='cnn_cifar10_model_10_epochs.h5'),
 ]
 
 
 def load_model(params: Munch):
-    return tf.keras.models.load_model(params["model"])
+    model_path = Path(__file__).parent / 'cnn_model' / params["model"]
+    return tf.keras.models.load_model(model_path)
 
 
 def preprocess_image(unclassified_image_bytes: bytes):
@@ -86,7 +82,7 @@ def preprocess_image(unclassified_image_bytes: bytes):
 
 class Parametrization(ViktorParametrization):
     text_01 = Text(
-        """# Welcome to Machine Learning Image Classification app!
+        """# Welcome to the Machine Learning Image Classification app!
 This application demonstrates how VIKTOR could be used to implement Machine Learning models to help with detecting 
 objects within images.
 
