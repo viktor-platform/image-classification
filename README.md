@@ -61,15 +61,18 @@ Here is some example code:
 
 ```python
 MODEL_OPTIONS = [
+    OptionListElement(label="CNN (1 epochs)", value="cnn_cifar10_model_1_epochs.h5"),
     OptionListElement(label="CNN (2 epochs)", value="cnn_cifar10_model_2_epochs.h5"),
     OptionListElement(label="CNN (5 epochs)", value="cnn_cifar10_model_5_epochs.h5"),
     OptionListElement(label="CNN (10 epochs)", value="cnn_cifar10_model_10_epochs.h5"),
+    OptionListElement(label="CNN (25 epochs)", value="cnn_cifar10_model_25_epochs.h5"),
+    OptionListElement(label="CNN (50 epochs)", value="cnn_cifar10_model_50_epochs.h5"),
 ]
 
 
 class Parametrization(ViktorParametrization):
     image = FileField("Upload a JPEG/JPG or PNG image", file_types=[".jpeg", ".jpg", ".png"])
-    model = OptionField("Select CNN model", options=MODEL_OPTIONS, default=MODEL_OPTIONS[0].value)
+    model = OptionField("Select CNN model", options=MODEL_OPTIONS, default=MODEL_OPTIONS[-1].value)
 ```
 
 

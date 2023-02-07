@@ -52,9 +52,12 @@ CLASSES = [
 
 
 MODEL_OPTIONS = [
+    OptionListElement(label="CNN (1 epoch)", value='cnn_cifar10_model_1_epochs.h5'),
     OptionListElement(label="CNN (2 epochs)", value='cnn_cifar10_model_2_epochs.h5'),
     OptionListElement(label="CNN (5 epochs)", value='cnn_cifar10_model_5_epochs.h5'),
     OptionListElement(label="CNN (10 epochs)", value='cnn_cifar10_model_10_epochs.h5'),
+    OptionListElement(label="CNN (25 epochs)", value='cnn_cifar10_model_25_epochs.h5'),
+    OptionListElement(label="CNN (50 epochs)", value='cnn_cifar10_model_50_epochs.h5'),
 ]
 
 
@@ -96,7 +99,9 @@ Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck.
     """
     )
     image = FileField("Upload a JPEG/JPG or PNG image", file_types=[".jpeg", ".jpg", ".png"])
-    model = OptionField("Select CNN model", options=MODEL_OPTIONS, default=MODEL_OPTIONS[0].value)
+    model = OptionField("Select CNN model", options=MODEL_OPTIONS, default=MODEL_OPTIONS[-1].value,
+                        description="Increase in Epochs could correlate well with increased accuracy, but there are "
+                                    "many other factors that affect the model's accuracy.")
     text_02 = Text(
         """## How could this be used in practice?
 Computer vision and image recognition can be used to help engineers in a variety of ways, such as:
