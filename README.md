@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/SDK-v14.0.0-blue) <Please check version is the same as specified in requirements.txt>
+
 # Bringing Your Image Classification Model to Life with VIKTOR: A Tutorial
 
 Welcome to this tutorial on setting up an Image Classification Convolution Neural Network within a VIKTOR app. 
